@@ -1,0 +1,15 @@
+Build Flags
+-----------
+_CWCHEAT_   : CWCheat codetype support.
+_PSPAR_     : PSPAR codetype support.
+_USB_       : USB connectivity functionality (not compatible with POPS).
+_PSID_      : PSID corrupt functionality.
+_SCREENSHOT_: Screenshot functionality.
+_GUIDE_     : Game guide (txt) viewer functionality.
+_UMDDUMP_   : UMD dumper functionality.
+_MODLIST_   : Module list functionality.
+_THLIST_    : Thread list functionality.
+_UMDDUMP_   : UMD dumper functionality.
+_MIPS_      : Disassembler functionality.
+_AUTOOFF_   : Reset code on deactivate functionality.
+_FONT_acorn : Use acorn as menu font.

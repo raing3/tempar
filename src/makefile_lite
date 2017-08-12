@@ -1,0 +1,42 @@
+TARGET = tempar_lite
+OBJS = imports.o \
+       objects/main.o \
+       objects/config.o \
+	   objects/language.o \
+	   objects/filebuffer.o \
+	   objects/cheat.o \
+	   objects/psid.o \
+	   objects/menu.o \
+	   objects/search.o \
+	   objects/log.o \
+	   objects/utils.o \
+	   objects/pspdebugkb.o \
+	   objects/random.o \
+	   objects/syslibc.o \
+	   objects/screenshot.o \
+	   objects/kmalloc.o \
+	   objects/ctrl.o \
+	   objects/disasm.o \
+	   objects/text.o \
+	   objects/float.o \
+	   objects/usb.o \
+	   objects/sdk.o \
+	   objects/filebrowser.o
+
+INCDIR = include
+CFLAGS = -Os -G0 -Wall -fshort-wchar -fno-pic -mno-check-zero-division -D_FONT_acorn -D_CWCHEAT_ -D_PSPAR_ -D_GUIDE_ -D_MIPS_ -D_AUTOOFF_ -D_LITE_ -D_MULTILANGUAGE_
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+BUILD_PRX = 1
+PRX_EXPORTS = exports.exp
+
+USE_KERNEL_LIBC = 1
+USE_KERNEL_LIBS = 1
+
+LIBDIR = libs
+LDFLAGS = -mno-crt0 -nostartfiles
+LIBS = -lpspdebug -lpsppower_driver -lpspreg -lpspge -lpsprtc -lpsputility
+
+PSPSDK = $(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak

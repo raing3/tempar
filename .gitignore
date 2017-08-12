@@ -1,0 +1,6 @@
+.idea
+build/*
+src/*.elf
+src/*.prx
+src/objects/*.o
+src/languages/*.h

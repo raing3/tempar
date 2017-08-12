@@ -1,0 +1,73 @@
+!!!PSPAR TempAR Tests
+!!**********
+
+::Test Cheat #1
+08802000 11111111
+
+::Test Cheat #2
+08802004 22222222
+
+:Single Select Folder
+
+::Test Cheat #1
+08802000 11111111
+
+::Test Cheat #2
+08802000 22222222
+
+::Test Cheat #3
+08802000 33333333
+
+::Test Cheat #4
+08802000 44444444
+
+::Test Cheat #5
+08802000 55555555
+
+----
+
+!Multi Select Folder
+
+::Test Cheat #1
+08802000 11111111
+
+::Test Cheat #2
+08802000 22222222
+
+::Test Cheat #3
+08802000 33333333
+
+::Test Cheat #4
+08802000 44444444
+
+::Test Cheat #5
+08802000 55555555
+
+----
+
+:::Comment Folder
+:::Comment Line #1
+:::Comment Line #2
+:::Comment Line #3
+:::Comment Line #4
+:::Comment Line #5
+
+:Folder With Comment Folder
+
+::Test Cheat #1
+08802000 11111111
+
+:::Comment Folder
+:::Comment Line #1
+:::Comment Line #2
+:::Comment Line #3
+:::Comment Line #4
+:::Comment Line #5
+
+----
+
+::Test Cheat #3
+08802000 33333333
+
+::Test Cheat #4
+08802004 44444444
