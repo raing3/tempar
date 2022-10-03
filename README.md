@@ -6,13 +6,7 @@ TempAR is a cheat plugin for the PlayStation Portable.
 
 It is a heavily modified version of MKUltra which itself is a modified version of NitePR.
 
-For more information please refer to the docs folder.
-
-Special thanks in particular to:
-
- - RedHate: Developer of MKUltra
- - SaNiK: Developer of NitePR
- 
+For more information please refer to the [plugin readme](docs/README.md).
 
 ##### Compiling
 

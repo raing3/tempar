@@ -6,10 +6,10 @@
 0xFFCCCCCC ;non-selected color (grey)
 0x00060606 ;non-selected color fade amount
 0xFF0000FF ;selected menu color (bright red)
-0xFFCCCCCC ;non-seleted menu color (grey)
+0xFFCCCCCC ;non-selected menu color (grey)
 0xFF0000FF ;off cheat color (red)
 0xFFFF0000 ;always on cheat color (blue)
 0xFF00FF00 ;normal on cheat color (green)
 0xFF21FF00 ;multi-select folder color (green)
 0xFF21FF00 ;single-select folder color (green)
-0xFFFFFF00 ;comments/empty codes (torquise)
+0xFFFFFF00 ;comment/empty code color (turquoise)
