@@ -15,7 +15,9 @@
 #ifndef __msx__
 #define __msx__
 
-const unsigned char msx[]={
+#include <psptypes.h>
+
+u8 msx[] = {
 	/* 0 0x00 '^@' */
 	0x00, /* 00000000 */
 	0x00, /* 00000000 */

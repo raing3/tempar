@@ -1,8 +1,9 @@
 #ifndef __msx__
 #define __msx__
 
-const unsigned char msx[] = {
+#include <psptypes.h>
 
+u8 msx[] = {
     // much better charset, by eddie!
     // this is actually the 8x8 neuromancer
     // vga/ega mode font :)

@@ -1,8 +1,9 @@
 #ifndef __msx__
 #define __msx__
 
-const unsigned char msx[] = {
+#include <psptypes.h>
 
+u8 msx[] = {
 	/*{*/
 	  	/*   Char 0: ' '  */
 	0xee,	/*=  [*** ]       */
