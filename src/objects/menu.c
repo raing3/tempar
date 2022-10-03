@@ -353,12 +353,12 @@ void layout_copymenu(u32 *address, u32 *value, int flags) {
 				case 0:
 					printf("%-33s", lang.copy_menu.copy_address);
 					pspDebugScreenSetTextColor(colors.color02);
-					printf("%19s = 0x%08X", lang.misc.address, copier->copier[copier->no].address);
+					printf("%19s = 0x%08lX", lang.misc.address, copier->copier[copier->no].address);
 					break;
 				case 1:
 					printf("%-33s", lang.copy_menu.paste_address);
 					pspDebugScreenSetTextColor(colors.color02);
-					printf("%19s = 0x%08X", lang.misc.value, copier->copier[copier->no].value);
+					printf("%19s = 0x%08lX", lang.misc.value, copier->copier[copier->no].value);
 					break;
 				case 2:
 					puts(lang.copy_menu.copy_value);
@@ -509,7 +509,7 @@ void layout_cheatedit(Cheat *cheat) {
 			pspDebugScreenSetTextColor(i == sel ? colors.color01 : colors.color02);
 
 			// print out the address and the hex
-			printf("  0x%08X  0x%08X  ", block->address, block->value);
+			printf("  0x%08lX  0x%08lX  ", block->address, block->value);
 
 			// print opcode or ascii and decimal
 			if(menu.cheater.edit_format) {
@@ -517,7 +517,7 @@ void layout_cheatedit(Cheat *cheat) {
 				mipsDecode(block->value, 0);
 			} else {
 				// print out the decimal
-				printf("%010u  ", block->value);
+				printf("%010lu", block->value);
 
 				// print out the ascii
 				buffer[0] = MEM_ASCII((block->value & 0x000000FF) >> 0);
@@ -762,7 +762,7 @@ void layout_searchsettings() {
 		printf("  %-11s %-11s %s\n", lang.misc.start, lang.misc.stop, lang.search_settings.max_results);
 
 		pspDebugScreenSetTextColor(colors.color01);
-		printf("  0x%08X  0x%08X  %010u\n", address(search.address_start), address(search.address_end), search.max_results);
+		printf("  0x%08lX  0x%08lX  %010lu\n", address(search.address_start), address(search.address_end), search.max_results);
 
 		// draw the cursor
 		i = 4 + x2;
@@ -925,7 +925,7 @@ void layout_search(char show_search_mode) {
 			// print out the hex
 			switch(search.history[0].flags & FLAG_DWORD) {
 				case FLAG_DWORD:
-					printf("0x%08X  ", MEM_INT(search.history[0].value));
+					printf("0x%08lX  ", MEM_INT(search.history[0].value));
 					break;
 				case FLAG_WORD:
 					printf("0x____%04X  ", MEM_SHORT(search.history[0].value));
@@ -942,7 +942,7 @@ void layout_search(char show_search_mode) {
 				// print out the decimal
 				switch(search.history[0].flags & FLAG_DWORD) {
 					case FLAG_DWORD:
-						printf("%010u  ", MEM_INT(search.history[0].value));
+						printf("%010lu  ", MEM_INT(search.history[0].value));
 						break;
 					case FLAG_WORD:
 						printf("%010u  ", MEM_SHORT(search.history[0].value));
@@ -1037,12 +1037,12 @@ void layout_search(char show_search_mode) {
 				pspDebugScreenSetTextColor(i == (sel - 4) ? colors.color01 : colors.color02);
 
 				// print out the address
-				printf("  0x%08X  ", address(search.results[i]));
+				printf("  0x%08lX  ", address(search.results[i]));
 
 				// print out the hex
 				switch(search.history[0].flags & FLAG_DWORD) {
 					case FLAG_DWORD:
-						printf("0x%08X  ", MEM_VALUE_INT(search.results[i]));
+						printf("0x%08lX  ", MEM_VALUE_INT(search.results[i]));
 						break;
 					case FLAG_WORD:
 						printf("0x____%04X  ", MEM_VALUE_SHORT(search.results[i]));
@@ -1059,7 +1059,7 @@ void layout_search(char show_search_mode) {
 					// print out the decimal
 					switch(search.history[0].flags & FLAG_DWORD) {
 						case FLAG_DWORD:
-							printf("%010u  ", MEM_VALUE_INT(search.results[i]));
+							printf("%010lu  ", MEM_VALUE_INT(search.results[i]));
 							break;
 						case FLAG_WORD:
 							printf("%010u  ", MEM_VALUE_SHORT(search.results[i]));
@@ -1372,7 +1372,7 @@ void layout_textsearch() {
 				pspDebugScreenSetTextColor(i == (sel - 2) ? colors.color01 : colors.color02);
 
 				// print out the address
-				printf("  0x%08X  ", address(search.results[i]));
+				printf("  0x%08lX  ", address(search.results[i]));
 
 				// print out the hex
 				for(j = 0; j < 40; j++) {
@@ -1749,15 +1749,15 @@ void layout_modinfo(SceUID uid) {
 		printf("  Version:  %i.%i\n", mod_info->version[1], mod_info->version[0]);
 		printf("  UID:      0x%08X\n", mod_info->modid);
 		printf("  Attr:     0x%04X\n\n", mod_info->attribute);
-		printf("  Entry:    0x%08X  GP:       0x%08X\n", mod_info->entry_addr, mod_info->gp_value);
-		printf("  TextAddr: 0x%08X  TextSize: 0x%08X\n", mod_info->text_addr, mod_info->text_size);
-		printf("  DataSize: 0x%08X  BssSize:  0x%08X\n\n", mod_info->data_size, mod_info->bss_size);
+		printf("  Entry:    0x%08lX  GP:       0x%08lX\n", mod_info->entry_addr, mod_info->gp_value);
+		printf("  TextAddr: 0x%08lX  TextSize: 0x%08lX\n", mod_info->text_addr, mod_info->text_size);
+		printf("  DataSize: 0x%08lX  BssSize:  0x%08lX\n\n", mod_info->data_size, mod_info->bss_size);
 
 		j = 0;
 		for(i = 0; i < 4; i++) {
 			if(mod_info->segmentsize[i] > 0) {
 				printf("  Segment %i\n", j);
-				printf("  Addr:     0x%08X  Size:     0x%08X\n\n", mod_info->segmentaddr[i], mod_info->segmentsize[i]);
+				printf("  Addr:     0x%08lX  Size:     0x%08lX\n\n", mod_info->segmentaddr[i], mod_info->segmentsize[i]);
 				j++;
 			}
 		}
@@ -1893,12 +1893,12 @@ void layout_thinfo(SceUID uid) {
 
 		printf(")\n");
 
-		printf("  Entry:        0x%08X  GP:           0x%08X\n", (u32)th_info.entry, (u32)th_info.gpReg);
-		printf("  Stack:        0x%08X  StackSize:    0x%08X\n", (u32)th_info.stack, th_info.stackSize);
+		printf("  Entry:        0x%08lX  GP:           0x%08lX\n", (u32)th_info.entry, (u32)th_info.gpReg);
+		printf("  Stack:        0x%08lX  StackSize:    0x%08X\n", (u32)th_info.stack, th_info.stackSize);
 		printf("  InitPri:      % 10i  CurrPri:      % 10i\n", th_info.initPriority, th_info.currentPriority);
 		printf("  WaitType:     % 10i  WaitId:       0x%08X\n", th_info.waitType, th_info.waitId);
 		printf("  WakeupCount:  % 10i  ExitStatus:   0x%08X\n", th_info.wakeupCount, th_info.exitStatus);
-		printf("  RunClocks:    % 10i  IntrPrempt:   % 10i\n", th_info.runClocks.low, th_info.intrPreemptCount);
+		printf("  RunClocks:    % 10li  IntrPrempt:   % 10i\n", th_info.runClocks.low, th_info.intrPreemptCount);
 		printf("  ThreadPrempt: % 10i  ReleaseCount: % 10i\n", th_info.threadPreemptCount, th_info.releaseCount);
 		printf("  StackFree:    % 10i\n", sceKernelGetThreadStackFreeSize(uid));
 
@@ -2462,7 +2462,7 @@ u32 layout_searcher() {
 					// print out the hex
 					switch(search.history[i].flags & FLAG_DWORD) {
 						case FLAG_DWORD:
-							printf("0x%08X  ", MEM_INT(search.history[i].value));
+							printf("0x%08lX  ", MEM_INT(search.history[i].value));
 							break;
 						case FLAG_WORD:
 							printf("0x____%04X  ", MEM_SHORT(search.history[i].value));
@@ -2475,7 +2475,7 @@ u32 layout_searcher() {
 					// print out the decimal
 					switch(search.history[i].flags & FLAG_DWORD) {
 						case FLAG_DWORD:
-							printf("%010u  ", MEM_INT(search.history[i].value));
+							printf("%010lu  ", MEM_INT(search.history[i].value));
 							break;
 						case FLAG_WORD:
 							printf("%010u  ", MEM_SHORT(search.history[i].value));
@@ -3002,7 +3002,7 @@ u32 layout_browser() {
 				pspDebugScreenSetTextColor(i == menu.bd.browser[menu.bd.no].Y ? colors.color01 : colors.color02 - (i * colors.color02_to));
 			
 				// print out the address
-				printf("  0x%08X  ", address(menu.bd.browser[menu.bd.no].address + (i * menu.bd.browser_lines)));
+				printf("  0x%08lX  ", address(menu.bd.browser[menu.bd.no].address + (i * menu.bd.browser_lines)));
 			  
 				// print out the hex
 				for(j = 0; j < menu.bd.browser_lines; j++) {
@@ -3055,11 +3055,11 @@ u32 layout_browser() {
 				}
 
 				// print out the address and hex value
-				printf("  0x%08X  0x%08X  ", address(menu.bd.decoder[menu.bd.no].address + (i * 4)), MEM_VALUE_INT(menu.bd.decoder[menu.bd.no].address + (i * 4)));
+				printf("  0x%08lX  0x%08lX  ", address(menu.bd.decoder[menu.bd.no].address + (i * 4)), MEM_VALUE_INT(menu.bd.decoder[menu.bd.no].address + (i * 4)));
 
 				if(menu.bd.decoder_format) {
 					// print out the decimal
-					printf("%010u  ", MEM_VALUE_INT(menu.bd.decoder[menu.bd.no].address + (i * 4)));
+					printf("%010lu  ", MEM_VALUE_INT(menu.bd.decoder[menu.bd.no].address + (i * 4)));
 
 					// print out the ascii
 					buffer[0] = MEM_ASCII(MEM_VALUE(menu.bd.decoder[menu.bd.no].address + (i * 4) + 0));

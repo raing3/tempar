@@ -4,6 +4,7 @@
 #include <psputility_sysparam.h>
 #include "common.h"
 #include "font.h"
+#include "language.h"
 #include "../languages/english.h"
 
 Language lang;

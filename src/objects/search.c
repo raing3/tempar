@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <pspctrl.h>
+#include <pspthreadman.h>
 #include "common.h"
 
 extern Config cfg;

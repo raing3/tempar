@@ -17,7 +17,7 @@ int filebrowser_display(char *path, char **ext, char ext_count) {
 	// allocate memory for file names/vars etc.
 	file_browser = kmalloc(0, PSP_SMEM_Low, sizeof(FileBrowser));
 	if(file_browser == NULL) {
-		return NULL;
+		return -1;
 	}
 
 	// set current folder and cache files

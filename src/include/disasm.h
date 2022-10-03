@@ -13,6 +13,10 @@
 #ifndef DISASM_H
 #define DISASM_H
 
+#include <pspdebug.h>
+
+#define printf(...) pspDebugScreenKprintf(__VA_ARGS__)
+
 #define DISASM_OPT_MAX       6
 #define DISASM_OPT_HEXINTS   'x'
 #define DISASM_OPT_MREGS     'r'

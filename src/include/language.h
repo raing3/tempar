@@ -230,19 +230,10 @@ typedef struct Language {
 	struct language_errors					errors;
 } Language;
 
-// TODO
 void language_init();
-
-// TODO
 void language_deinit();
-
-// TODO
 int language_load();
-
-int language_load_name(const char *name);
-
 int language_load_file(const char *file);
-
-int font_load_file(const char *file);
+void font_patch();
 
 #endif

@@ -21,6 +21,7 @@
 #include <pspkernel.h>
 #include <pspsysmem_kernel.h>
 #include <pspsuspend.h>
+#include <string.h>
 #include "common.h"
 
 typedef struct {

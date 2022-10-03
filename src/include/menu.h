@@ -2,9 +2,10 @@
 #define MENU_H
 
 #include <pspkerneltypes.h>
+#include <pspdebug.h>
 
 // functions
-#define printf pspDebugScreenKprintf
+#define printf(...) pspDebugScreenKprintf(__VA_ARGS__)
 #define puts pspDebugScreenPuts
 
 // copy menu flags
@@ -65,61 +66,35 @@ typedef struct MenuState {
 } MenuState;
 
 void *get_vram();
-
+void menu_show();
+void menu_init();
 int get_menu_ctrl(int delay, int allow_empty);
-
 u32 percentage_to_color(int percent);
-
 void decode_str(char *str, char key);
-
 void line_clear(int line);
-
 void line_print(int line);
-
 void line_cursor(int index, u32 color);
-
 void show_error(char *error);
-
 void layout_cheatmenu(Cheat *cheat);
-
 void layout_copymenu(u32 *address, u32 *value, int flags);
-
 void layout_cheatedit(Cheat *cheat);
-
 void layout_searchsettings();
-
 void layout_search(char show_search_mode);
-
 void layout_textsearch();
-
 void layout_systools();
-
 void layout_modlist();
-
 void layout_modinfo(SceUID uid);
-
 void layout_thlist();
-
 void layout_thinfo(SceUID uid);
-
 void layout_umddumper();
-
 int layout_tab();
-
 void layout_heading();
-
 u32 layout_cheats();
-
 u32 layout_searcher();
-
 u32 layout_options();
-
 u32 layout_browser();
-
 u32 layout_credits();
-
 u32 layout_credits2();
-
 u32 layout_guide();
 
 #endif

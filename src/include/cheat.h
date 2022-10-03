@@ -427,6 +427,8 @@ Block *block_add(Block *block);
 // TODO
 Block *block_insert(Cheat *cheat, Block *block, int index);
 
+Block *block_delete(Cheat *cheat, int index);
+
 /**
  * Gets the index of a block from the block list.
  *
@@ -434,5 +436,7 @@ Block *block_insert(Cheat *cheat, Block *block, int index);
  * @return Index of the block in the block list, -1 on error.
 */
 int block_get_index(Block *block);
+
+void patch_apply(const char *path);
 
 #endif
