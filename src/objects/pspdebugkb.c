@@ -191,8 +191,6 @@ void pspDebugKbInit(char* str, int len) {
 	sceCtrlPeekBufferPositive(&input, 1);
 	sceCtrlPeekBufferPositive(&lastinput, 1);
 
-	unsigned int inputTime = input.TimeStamp;
-
 	pspDebugKbClearBox();
 
 	// Initialize charTable
