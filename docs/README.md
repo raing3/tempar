@@ -14,7 +14,7 @@ replay code types. And from that came "TempAR", the angry cheat device. :)
 ### Installation
 
 1. Copy the seplugins folder to your Memory Stick
-   (if not copying over game.txt and pops.txt be sure to manually add those lines to the files on the MS).
+   (if not copying over game.txt and pops.txt be sure to manually add those lines to the files).
 
 ### Hotkeys
 
@@ -151,11 +151,6 @@ Below is a search speed performance comparison for God of War: Ghost of Sparta a
 | 8-bit unknown (different)           | 5:00 for 20%, 20:00+ for 100% | 0:22 for 100% | 54x faster  |
 | 8-bit unknown (different)           | Skipped                       | 0:02 for 100% | Same        |
 
-## Useful links
-
- * [PSPAR.com](http://www.pspar.com/): Datel PSP action replay cheat database.
- * [CWCheat DB Editor](https://code.google.com/archive/p/cwcheatdb/downloads) (by Pasky): Modify PSPAR/CWCheat format database files.
-
 ## FAQ
 
 Q: Can I use both CWCheat and PSPAR code types in a single code?
@@ -184,7 +179,16 @@ Special thanks go out to the following people, without them this would not have 
  * NoEffex: The corrupt PSID function as well as possibly some other code.
  * Normmatt: His great code type analyzer tool.
  * RedHate: Improving upon the NitePR code base.
- * The original NitePR Coders: SANiK, imk and telazorn are probably the most to thank for this as a large amount of the original code and ideas were theres from NitePR.
- * weltall: The CWCheat cheat device and all the great code types which were implemented into it... even if the non-standard pointer codes were a bitch to implement.
+ * The original NitePR Coders: SANiK, imk and telazorn are probably the most to thank for this as a large amount of
+   the original code and ideas were theres from NitePR.
+ * weltall: The CWCheat cheat device and all the great code types which were implemented into it... even if the
+   non-standard pointer codes were a bitch to implement.
  * xist: Giving me a great name for the cheat device.
  * Everyone else who helped along the way with testing, fixes and suggestions!
+ 
+
+## Useful links
+
+ * [PSPAR.com](http://www.pspar.com/): Datel PSP action replay cheat database.
+ * [CWCheat DB Editor](https://code.google.com/archive/p/cwcheatdb/downloads) (by Pasky): Modify PSPAR/CWCheat format
+   database files.
