@@ -1,6 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
+#include <pspkerneltypes.h>
+
 // functions
 #define printf pspDebugScreenKprintf
 #define puts pspDebugScreenPuts

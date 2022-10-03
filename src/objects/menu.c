@@ -14,6 +14,8 @@
 #include <pspctrl_kernel.h>
 #include <pspdisplay_kernel.h>
 #include <pspimpose_driver.h>
+#include <pspkerneltypes.h>
+#include <pspthreadman.h>
 #include "common.h"
 
 extern SceUID thid;

@@ -11,7 +11,6 @@ OBJS = imports.o \
 	   objects/log.o \
 	   objects/utils.o \
 	   objects/pspdebugkb.o \
-	   objects/random.o \
 	   objects/syslibc.o \
 	   objects/screenshot.o \
 	   objects/kmalloc.o \
@@ -35,7 +34,7 @@ USE_KERNEL_LIBC = 1
 USE_KERNEL_LIBS = 1
 
 LIBDIR = libs
-LDFLAGS = -mno-crt0 -nostartfiles
+LDFLAGS = -nostartfiles
 LIBS = -lpspdebug -lpsppower_driver -lpspreg -lpspge -lpsprtc -lpsputility
 
 PSPSDK = $(shell psp-config --pspsdk-path)

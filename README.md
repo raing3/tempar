@@ -16,8 +16,12 @@ Special thanks in particular to:
 
 ##### Compiling
 
-To compile, ensure you have pspsdk setup and then run "make release".
+To compile, ensure you have Docker installed and run the following in PowerShell:
 
-A tar.gz file containing the binaries and other misc files will be output to a "build" folder.
+```
+docker run -it -v "${PWD}:/src" -w "/src" pspdev/pspsdk make release
+```
 
-Build process tested on Windows 10 with Minimalist PSPSDK (https://sourceforge.net/projects/minpspw/)
+A tar.gz file containing the binaries and other misc files will be output to a `build` folder.
+
+Build process tested on Windows 10.

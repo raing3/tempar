@@ -32,6 +32,7 @@
 #include <pspsysmem_kernel.h>
 #include <psputility.h>
 #include <pspctrl_kernel.h>
+#include <pspthreadman.h>
 #include "common.h"
 
 PSP_MODULE_INFO(MOD_NAME, 0x3007, VER_MAIN, VER_SUB);

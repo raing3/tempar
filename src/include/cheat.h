@@ -1,6 +1,8 @@
 #ifndef CHEAT_H
 #define CHEAT_H
 
+#include <pspkerneltypes.h>
+
 #define CHEAT_BACKUP      0x01
 #define CHEAT_RESTORE     0x02
 #define CHEAT_TOGGLE_ALL  0x04

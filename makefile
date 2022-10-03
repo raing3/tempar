@@ -5,11 +5,11 @@ release: prep psp lite pack clean
 release_pr: prep psppr litepr pack clean
 
 clean:
-	-rm -f src/*.elf
-	-rm -f src/*.prx
-	-rm -f src/objects/*.o
-	-rm -f src/languages/*.h
-	-rm -rf build/temp
+	rm -f src/*.elf
+	rm -f src/*.prx
+	rm -f src/objects/*.o
+	rm -f src/languages/*.h
+	rm -rf build/temp
 
 prep:
 	bin2c "src/languages/english.bin" "src/languages/english.h" "language_english"

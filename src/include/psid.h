@@ -2,6 +2,7 @@
 #define PSID_H
 
 #include <pspopenpsid.h>
+#include <pspkerneltypes.h>
 
 void psid_init();
 

@@ -17,7 +17,6 @@
 #include "psid.h"
 #include "pspdebugkb.h"
 #include "psploadcore.h"
-#include "random.h"
 #include "screenshot.h"
 #include "search.h"
 #include "syslibc.h"

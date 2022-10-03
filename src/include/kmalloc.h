@@ -1,6 +1,8 @@
 #ifndef KMALLOC_H
 #define KMALLOC_H
 
+#include <pspkerneltypes.h>
+
 // TODO
 int choose_alloc(SceSize size);
 

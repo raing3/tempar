@@ -1,6 +1,8 @@
 #ifndef __LIBCWCHEAT_H__
 #define __LIBCWCHEAT_H__
 
+#include <pspkerneltypes.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
